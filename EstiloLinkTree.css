@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lavishly+Yours&display=swap');
+
+
+:root {
+    --azul-profundo: #000b1a;
+    --dourado: linear-gradient(45deg, #FFD700, #FFEC8A, #D4AF37);
+    --degrade-dinamico: linear-gradient(45deg, #001f3f, #004386, #0059b3);
+    --sombra-ativa: 0 0 15px rgba(255, 215, 0, 0.6);
+    --velocidade-animacao: 0.5s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--azul-profundo);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.efeito-fundo {
+    position: fixed;
+    width: 500%;
+    height: 500%;
+    background: var(--degrade-dinamico);
+    animation: movimentoFundo 20s infinite linear;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    width: 95%;
+    max-width: 600px;
+    background: rgba(0, 11, 26, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(0, 56, 168, 0.3);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    animation: rotacaoBorda 4s linear infinite;
+    z-index: -1;
+}
+
+.profile {
+    position: relative;
+    margin-bottom: 2rem;
+    justify-items: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background: var(--dourado) border-box;
+    margin: 0 auto;
+    animation: flutuar 4s ease-in-out infinite;
+    transition: transform 0.3s;
+    z-index: 999;
+}
+
+
+.profile:hover .profile-img {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    background: var(--dourado);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 1rem 0;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    font-family: "Alex Brush", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.profile-bio {
+    color: white;
+}
+
+.links {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.link {
+    position: relative;
+    padding: 1.2rem;
+    background: rgba(0, 23, 45, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all var(--velocidade-animacao) ease;
+}
+
+.link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    transition: left 0.8s;
+}
+
+.link:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-ativa);
+    background: rgba(0, 31, 63, 0.9);
+}
+
+.link:hover::before {
+    left: 100%;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #FFD700;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 11, 26, 0.9);
+    color: #FFD700;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.icon:hover {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 5px #FFD700);
+}
+
+.icon:hover::after {
+    opacity: 1;
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes movimentoFundo {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotacaoBorda {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.particulas {
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particula {
+    position: absolute;
+    background: radial-gradient(circle, #FFD700 10%, transparent 70%);
+    border-radius: 50%;
+    animation: explosao 1s forwards;
+}
+
+@keyframes explosao {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+}
