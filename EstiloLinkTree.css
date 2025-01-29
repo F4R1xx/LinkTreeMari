@@ -3,7 +3,7 @@
 
 :root {
     --azul-profundo: #000b1a;
-    --dourado: linear-gradient(45deg, #FFD700, #FFEC8A, #D4AF37);
+    --dourado: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);;
     --degrade-dinamico: linear-gradient(45deg, #001f3f, #004386, #0059b3);
     --sombra-ativa: 0 0 15px rgba(255, 215, 0, 0.6);
     --velocidade-animacao: 0.5s;
@@ -147,7 +147,7 @@ body {
 
 .icon {
     font-size: 2rem;
-    color: #FFD700;
+    color: white;
     transition: all 0.3s ease;
     position: relative;
 }
