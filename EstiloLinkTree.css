@@ -177,34 +177,6 @@ body {
     opacity: 1;
 }
 
-@keyframes flutuar {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes movimentoFundo {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotacaoBorda {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .particulas {
     position: fixed;
     pointer-events: none;
