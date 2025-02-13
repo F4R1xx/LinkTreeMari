@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Alex+Brush&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 :root {
   --azul-profundo: #000f37;
-  --gradient-gold: linear-gradient(to top, #fad892, #b37927, #fad892, #b37927, #fad892);
+  --gradient-gold: linear-gradient(to top, #fad892, #b37927, #fad892, #b37927, #fad892, #b37927, #fad892, #b37927, #fad892);
   --sombra-ativa: 0 4px 6px rgba(0, 0, 0, 0.1);
   --velocidade-animacao: 0.5s;
   --bg-link: linear-gradient(to top, #fad892, #b37927, #fad892);
@@ -71,7 +70,7 @@ body, .container {
   -webkit-text-fill-color: transparent;
   margin: 1rem 0;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  font-family: "Alex Brush", cursive;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
 }
 
@@ -83,7 +82,7 @@ body, .container {
     -webkit-text-fill-color: transparent;
     margin: 1rem 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    font-family: "Alex Brush", cursive;
+    font-family: "Playfair Display", serif;
     font-weight: 400;
 }
 
